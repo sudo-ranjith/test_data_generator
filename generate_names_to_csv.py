@@ -48,7 +48,8 @@ try:
         df.loc[data] = [user_id, created_by, created_dt, updated_by, updated_dt, email, first_name, last_name, password, phone_no, status, token, user_name, address, organization, role_id]
         print(f"it is adding row to the data frame...")
     # write to csv file
-    df.to_csv('users.csv', index=False)
+    output_file_name = f"output_data_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
+    df.to_csv(output_file_name, index=False)
     print(f"Dataframe created and saved to csv file successfully")
 
 except Exception:
